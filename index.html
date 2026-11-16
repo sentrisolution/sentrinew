@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{if(localStorage.getItem('sentri-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
 <style>
 :root{
   --bg:#030a1f; --bg2:#06112d; --card:#081634; --line:rgba(148,170,210,.12); --line2:rgba(148,170,210,.22);
@@ -37,7 +38,7 @@ section{position:relative;padding:120px 0}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;transition:.25s;cursor:pointer;border:0;font-family:inherit}
-.btn-p{background:var(--text);color:#030a1f}
+.btn-p{background:var(--text);color:var(--bg)}
 .btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 40px -8px rgba(77,155,255,.55)}
 .btn svg{width:16px;height:16px;transition:transform .25s}
 .btn:hover svg{transform:translateX(3px)}
@@ -173,7 +174,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
   .why-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .foot{grid-template-columns:1fr 1fr}
 }
-@media (max-width:860px){
+@media (max-width:1080px){
   .menu,.nav-r .btn{display:none}
   .burger{display:grid;place-items:center}
   .menu.open{display:flex;position:absolute;top:76px;left:16px;right:16px;flex-direction:column;align-items:stretch;padding:12px;background:rgba(6,17,45,.97);border:1px solid var(--line2);border-radius:18px}
@@ -194,6 +195,53 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
   .foot{grid-template-columns:1fr}
   .lang{display:none}
 }
+/* search */
+.swrap{position:relative;width:42px;height:42px;flex:none}
+.sbox{position:absolute;top:0;right:0;height:42px;width:42px;display:flex;align-items:center;border:1px solid var(--line2);border-radius:12px;background:var(--pop);overflow:hidden;transition:width .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;z-index:5}
+.sbox.open{width:min(340px,calc(100vw - 32px));box-shadow:0 14px 40px -12px rgba(0,0,0,.45)}
+.sico,.sx{flex:none;display:grid;place-items:center;background:none;border:0;color:var(--text);cursor:pointer}
+.sico{width:40px;height:40px}
+.sico:hover{color:var(--a1)}
+.sin{flex:1;min-width:0;background:none;border:0;outline:0;padding:0;color:var(--text);font:inherit;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s .1s;box-shadow:none}
+.sin:focus{box-shadow:none}
+.sin::-webkit-search-cancel-button{display:none}
+.sx{width:30px;height:30px;margin-right:5px;border-radius:50%;color:var(--muted);opacity:0;pointer-events:none;transition:.2s}
+.sx:hover{background:var(--line);color:var(--text)}
+.sbox.open .sin,.sbox.open .sx{opacity:1;pointer-events:auto}
+.sbox.open .sico{cursor:default;color:var(--muted)}
+
+/* theme switch */
+.thm{position:relative;flex:none;width:58px;height:30px;padding:0;border:1px solid var(--line2);border-radius:999px;background:var(--card);cursor:pointer;color:var(--dim)}
+.thm>svg{position:absolute;top:7px;width:14px;height:14px}
+.thm>svg.mo{left:8px}.thm>svg.su{right:8px}
+.thm i{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--a1);box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+[data-theme="light"] .thm i{transform:translateX(28px)}
+
+/* light mode */
+html[data-theme="light"]{
+  --bg:#ffffff; --bg2:#f4f7fc; --card:#ffffff; --pop:#ffffff; --line:rgba(15,40,90,.10); --line2:rgba(15,40,90,.18);
+  --text:#0b1530; --muted:#4a5672; --dim:#7b87a3;
+  --a1:#1e6cf0; --a2:#0f47c9;
+  --grad:linear-gradient(120deg,#4d9bff,#1e6cf0 50%,#0f47c9);
+}
+:root{--pop:rgba(6,17,45,.97)}
+body,.alt,.card,.info a,.stat,.checks li,footer{transition:background-color .3s,border-color .3s,color .3s}
+[data-theme="light"] header.scrolled{background:rgba(255,255,255,.82)}
+[data-theme="light"] .logo img{filter:brightness(0)}
+[data-theme="light"] .menu>li>a:hover,[data-theme="light"] .menu .dd:hover .dd-t,[data-theme="light"] .menu .dd:focus-within .dd-t,[data-theme="light"] .lang a.on{background:rgba(15,40,90,.06)}
+[data-theme="light"] .dd-m,[data-theme="light"] .menu.open{background:#fff;box-shadow:0 18px 40px -16px rgba(15,40,90,.25)}
+[data-theme="light"] .orb{opacity:.22}
+[data-theme="light"] .orb.o1{background:#4d9bff}
+[data-theme="light"] .orb.o2{background:#9cc8ff}
+[data-theme="light"] .radar .core{background:radial-gradient(circle,#2d7bff,#0f47c9);box-shadow:0 0 50px rgba(30,108,240,.3)}
+[data-theme="light"] .card,[data-theme="light"] .info a,[data-theme="light"] .stat,[data-theme="light"] .checks li,[data-theme="light"] form{box-shadow:0 1px 2px rgba(15,40,90,.04),0 8px 24px -14px rgba(15,40,90,.18)}
+[data-theme="light"] .card:hover{box-shadow:0 18px 40px -18px rgba(30,108,240,.35)}
+[data-theme="light"] input,[data-theme="light"] select,[data-theme="light"] textarea{background:#f6f8fc}
+[data-theme="light"] .sin{background:none}
+[data-theme="light"] .sbox.open{box-shadow:0 14px 40px -14px rgba(15,40,90,.3)}
+[data-theme="light"] .big{background:linear-gradient(180deg,rgba(11,21,48,.08),transparent 85%);-webkit-background-clip:text;background-clip:text}
+[data-theme="light"] .thm i{box-shadow:0 2px 8px rgba(15,40,90,.25)}
+
 @media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -203,7 +251,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
   <div class="wrap nav">
     <a href="#top" class="logo" aria-label="Sentri Solutions">
       <img src="assets/logo.png" alt="" width="32" height="32">
-      <span>Sentri<small>Solutions</small></span>
+      <span>Sentri<small lang="en">SOLUTIONS</small></span>
     </a>
     <ul class="menu" id="menu">
       <li><a href="#top">Ana səhifə</a></li>
@@ -216,6 +264,16 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
     </ul>
     <div class="nav-r">
       <div class="lang"><a href="#" class="on">AZ</a><a href="#">EN</a><a href="#">RU</a></div>
+      <button class="thm" id="thm" type="button" role="switch" aria-checked="false" aria-label="Gecə / gündüz rejimi" title="Gecə / gündüz rejimi">
+        <svg class="mo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/></svg>
+        <svg class="su" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+        <i></i>
+      </button>
+      <div class="swrap"><div class="sbox" id="sbox">
+        <button class="sico" type="button" aria-label="Axtar"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input class="sin" type="search" enterkeyhint="search" autocomplete="off" placeholder="Xidmət, layihə və ya bloq axtar…" aria-label="Axtar">
+        <button class="sx" type="button" aria-label="Bağla"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div></div>
       <a href="#contact" class="btn btn-p" style="padding:11px 18px">Bizə yazın</a>
       <button class="burger" id="burger" aria-label="Menyu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
@@ -227,7 +285,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
   <div class="orb o1"></div><div class="orb o2"></div>
   <div class="wrap hero-in">
     <div>
-      <span class="mono eyebrow rv">SENTRI.AZ · Rəqəmsal keşikçiniz</span>
+      <span class="mono eyebrow rv">SENTRİ.AZ · Rəqəmsal keşikçiniz</span>
       <h1 class="rv d1">Şirkətinizin Texnoloji prosesləri<br><span class="grad">Etibarlı Əllərdə</span></h1>
       <p class="lead rv d2">İT infrastrukturundan kibertəhlükəsizliyə, veb həllərdən texniki dəstəyə qədər bütün proseslərinizi başdan-ayağa biz idarə edirik, siz isə texniki qayğıları unudub rahatlıqla biznesinizi böyütməyə fokuslanırsınız.</p>
     </div>
@@ -369,8 +427,8 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
   <div class="wrap about">
     <div class="rv">
       <span class="mono eyebrow">Haqqımızda</span>
-      <h2 style="font-size:clamp(32px,4.6vw,52px);margin:16px 0 22px">SENTRI <span class="grad">HAQQINDA</span></h2>
-      <p>SENTRI şirkətlərə etibarlı və davamlı İT həlləri təqdim edən peşəkar texnologiya komandasıdır. İnfrastruktur qurulması və İT dəstək, veb həlləri və kibertəhlükəsizlik sahələrində bizneslərin texnoloji ehtiyaclarını qarşılayırıq.</p>
+      <h2 style="font-size:clamp(32px,4.6vw,52px);margin:16px 0 22px">SENTRİ <span class="grad">HAQQINDA</span></h2>
+      <p>SENTRİ şirkətlərə etibarlı və davamlı İT həlləri təqdim edən peşəkar texnologiya komandasıdır. İnfrastruktur qurulması və İT dəstək, veb həlləri və kibertəhlükəsizlik sahələrində bizneslərin texnoloji ehtiyaclarını qarşılayırıq.</p>
       <p>Məqsədimiz sadəcə xidmət göstərmək deyil, keyfiyyətli iş, şəffaf əməkdaşlıq və uzunmüddətli etibar yaratmaqdır.</p>
     </div>
     <div class="stats rv d1">
@@ -419,7 +477,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
   <div class="wrap">
     <div class="foot">
       <div>
-        <a href="#top" class="logo"><img src="assets/logo.png" alt="" width="34" height="34"><span>Sentri<small>Solutions</small></span></a>
+        <a href="#top" class="logo"><img src="assets/logo.png" alt="" width="34" height="34"><span>Sentri<small lang="en">SOLUTIONS</small></span></a>
         <div class="fcl">
           <a href="tel:+994706950121">+994 70 695 01 21</a>
           <a href="mailto:contact@sentri.az">contact@sentri.az</a>
@@ -436,7 +494,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
       <div><h4>Şirkət</h4><ul><li><a href="#about">Haqqımızda</a></li></ul></div>
       <div><h4>Əlaqə</h4><ul><li><a href="mailto:contact@sentri.az">contact@sentri.az</a></li><li><a href="tel:+994706950121">+994 70 695 01 21</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Tbilisi+pr.+3001,+AZ1029,+Baku" target="_blank" rel="noopener">Tbilisi pr. 3001, AZ1029</a></li></ul></div>
     </div>
-    <div class="big">SENTRI</div>
+    <div class="big">SENTRİ</div>
     <div class="copy">© <span id="yr">2026</span> Sentri Solutions. Bütün hüquqlar qorunur.</div>
   </div>
 </footer>
@@ -444,6 +502,28 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
 <a class="wa" href="https://wa.me/994706950121" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg></a>
 
 <script>
+// theme (dark default, light optional)
+const root=document.documentElement,thm=document.getElementById('thm'),meta=document.querySelector('meta[name=theme-color]');
+function setTheme(light,save){root.toggleAttribute('data-theme',light);if(light)root.setAttribute('data-theme','light');
+  thm.setAttribute('aria-checked',light);meta.content=light?'#ffffff':'#030a1f';
+  if(save)try{localStorage.setItem('sentri-theme',light?'light':'dark')}catch(e){}}
+setTheme(root.getAttribute('data-theme')==='light');
+thm.onclick=()=>setTheme(root.getAttribute('data-theme')!=='light',true);
+// search
+const sb=document.getElementById('sbox'),si=sb.querySelector('.sin');
+function openS(){if(sb.classList.contains('open'))return;sb.classList.add('open');menu.classList.remove('open');setTimeout(()=>si.focus(),60)}
+function closeS(){sb.classList.remove('open');si.blur()}
+sb.querySelector('.sico').onclick=openS;
+sb.querySelector('.sx').onclick=e=>{e.stopPropagation();si.value='';closeS()};
+const outside=e=>{if(sb.classList.contains('open')&&!sb.contains(e.target))closeS()};
+document.addEventListener('mousedown',outside);document.addEventListener('touchstart',outside,{passive:true});
+function runS(raw){const q=raw.trim().toLocaleLowerCase('az');if(!q)return;
+  const hit=[...document.querySelectorAll('main h1,main h2,main h3,main p,main li,footer li')].find(el=>el.textContent.toLocaleLowerCase('az').includes(q));
+  if(!hit){sb.animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:300});return}
+  closeS();hit.closest('.rv')?.classList.add('in');
+  scrollTo({top:hit.getBoundingClientRect().top+scrollY-110,behavior:'smooth'});
+  hit.animate([{backgroundColor:'rgba(77,155,255,.28)'},{backgroundColor:'rgba(77,155,255,0)'}],{duration:2000,easing:'ease-out'})}
+si.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();runS(si.value)}else if(e.key==='Escape')closeS()});
 // header
 const hdr=document.getElementById('hdr');
 addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>20),{passive:true});

@@ -299,8 +299,8 @@ body,.alt,.card,.info a,.stat,.checks li,footer{transition:background-color .3s,
 .sidle{margin:auto;text-align:center;color:var(--muted);max-width:300px}
 .sidle svg{width:46px;height:46px;margin:0 auto 14px;color:var(--a1);opacity:.8}
 .sgrade{display:flex;align-items:center;gap:22px;margin-bottom:22px}
-.ring{--g:var(--a1);--v:0;flex:none;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--g) calc(var(--v)*1%),var(--line) 0);transition:--v 1s}
-.ring b{width:90px;height:90px;border-radius:50%;background:var(--card);display:grid;place-items:center;font:800 46px "Inter Tight";color:var(--g)}
+.sring{--g:var(--a1);--v:0;flex:none;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--g) calc(var(--v)*1%),var(--line) 0);transition:--v 1s}
+.sring b{width:90px;height:90px;border-radius:50%;background:var(--card);display:grid;place-items:center;font:800 46px "Inter Tight";color:var(--g)}
 .sgrade h3{font-size:22px;margin-bottom:4px}.sgrade p{color:var(--muted);font-size:14.5px}
 .chk{list-style:none;display:grid;gap:8px;margin-bottom:22px}
 .chk li{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border:1px solid var(--line);border-radius:12px;font-size:14.5px}
@@ -315,7 +315,7 @@ body,.alt,.card,.info a,.stat,.checks li,footer{transition:background-color .3s,
 @keyframes sp{to{transform:rotate(360deg)}}
 .ssrc{margin-top:12px;color:var(--dim);font-size:12px;text-align:center}.ssrc a{text-decoration:underline}
 @media (max-width:900px){.scan{grid-template-columns:1fr}}
-@media (max-width:560px){.sform{flex-direction:column}.sform .btn{justify-content:center}.ring{width:92px;height:92px}.ring b{width:74px;height:74px;font-size:38px}}
+@media (max-width:560px){.sform{flex-direction:column}.sform .btn{justify-content:center}.sring{width:92px;height:92px}.sring b{width:74px;height:74px;font-size:38px}}
 </style>
 </head>
 <body>
@@ -764,11 +764,11 @@ sF.addEventListener('submit',async e=>{e.preventDefault();sE.textContent='';
     const rows=CHECKS.filter(([k])=>tests[k]).map(([k,n,d])=>{const p=tests[k].pass;if(p===false)fails.push(n);
       return `<li class="${p===true?'ok':p===false?'no':'na'}"><i>${p===true?'✓':p===false?'✕':'–'}</i><span><b>${n}</b><small>${d}</small></span></li>`}).join('');
     const msg=`Salam, Sentri! Saytımı yoxladım: ${host}\nQiymət: ${r.grade} (${r.score}/100)${fails.length?'\nÇatışmayanlar: '+fails.join(', '):''}\nTam təhlükəsizlik yoxlaması istəyirəm.`;
-    sR.innerHTML=`<div class="sgrade"><div class="ring" style="--g:${c}"><b>${esc(r.grade)}</b></div><div><h3>${t1} · ${Math.max(0,Math.min(100,+r.score||0))}/100</h3><p>${t2}</p></div></div>
+    sR.innerHTML=`<div class="sgrade"><div class="sring" style="--g:${c}"><b>${esc(r.grade)}</b></div><div><h3>${t1} · ${Math.max(0,Math.min(100,+r.score||0))}/100</h3><p>${t2}</p></div></div>
       ${rows?`<ul class="chk">${rows}</ul>`:''}
       <a class="btn" target="_blank" rel="noopener" href="https://wa.me/994706950121?text=${encodeURIComponent(msg)}">${fails.length?'Boşluqları bağlamaq üçün bizə yazın':'Tam yoxlama üçün bizə yazın'}</a>
       <p class="ssrc">Yoxlama <a href="${esc(r.details_url||'https://developer.mozilla.org/en-US/observatory')}" target="_blank" rel="noopener">Mozilla HTTP Observatory</a> ilə aparılıb</p>`;
-    const ring=sR.querySelector('.ring');let v=0;const tgt=Math.max(4,Math.min(100,+r.score||0));
+    const ring=sR.querySelector('.sring');let v=0;const tgt=Math.max(4,Math.min(100,+r.score||0));
     (function an(){v=Math.min(tgt,v+3);ring.style.setProperty('--v',v);if(v<tgt)requestAnimationFrame(an)})();
   }catch(err){sR.innerHTML='<div class="sidle">Nəticə alınmadı</div>';sE.textContent=err.message.match(/[əöüğışç]/i)?err.message:'Bağlantı xətası. İnterneti yoxlayıb yenidən cəhd edin.'}
   finally{sB.disabled=false}});

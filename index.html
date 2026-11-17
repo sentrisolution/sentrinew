@@ -320,6 +320,8 @@ body,.alt,.card,.info a,.stat,.checks li,footer{transition:background-color .3s,
 .sgrade{display:flex;align-items:center;gap:22px;margin-bottom:22px}
 .sring{--g:var(--a1);--v:0;flex:none;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--g) calc(var(--v)*1%),var(--line) 0);transition:--v 1s}
 .sring b{width:90px;height:90px;border-radius:50%;background:var(--card);display:grid;place-items:center;font:800 46px "Inter Tight";color:var(--g)}
+.sring b.cnt{font-size:30px;letter-spacing:-.02em}
+.snote{margin:-6px 0 18px;color:var(--muted);font-size:13px;line-height:1.5}
 .sgrade h3{font-size:22px;margin-bottom:4px}.sgrade p{color:var(--muted);font-size:14.5px}
 .chk{list-style:none;display:grid;gap:8px;margin-bottom:22px}
 .chk li{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border:1px solid var(--line);border-radius:12px;font-size:14.5px}
@@ -538,8 +540,8 @@ body,.alt,.card,.info a,.stat,.checks li,footer{transition:background-color .3s,
   <div class="wrap scan">
     <div class="rv">
       <span class="mono eyebrow">Ödənişsiz təhlükəsizlik testi</span>
-      <h2 style="font-size:clamp(32px,4.6vw,52px);margin:16px 0 18px">Saytınız nə qədər <span class="grad">təhlükəsizdir?</span></h2>
-      <p style="color:var(--muted);font-size:18px;margin-bottom:26px">Saytınızın ünvanını yazın. Bir neçə saniyəyə əsas təhlükəsizlik ayarlarını yoxlayıb A-dan F-ə qədər qiymət verəcəyik.</p>
+      <h2 style="font-size:clamp(32px,4.6vw,52px);margin:16px 0 18px">Saytınızın <span class="grad">qoruma ayarlarını</span> yoxlayın</h2>
+      <p style="color:var(--muted);font-size:18px;margin-bottom:26px">Saytın ünvanını yazın. Ziyarətçiləri hücumlardan qoruyan brauzer ayarlarından hansılarının aktiv olduğunu bir neçə saniyəyə göstərəcəyik.</p>
       <form class="sform" id="sForm" novalidate>
         <input id="sHost" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="saytiniz.az" aria-label="Saytın ünvanı">
         <button class="btn btn-p" id="sBtn" type="submit">Yoxla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
@@ -809,8 +811,8 @@ const CHECKS=[
   ['subresource-integrity','Xarici skriptlərin yoxlanması','Kənar mənbədən yüklənən kodun dəyişdirilmədiyi yoxlanılır']
 ];
 const GC={A:'#34d399',B:'#a3e635',C:'#fbbf24',D:'#fb923c',F:'#f87171'};
-const GT={A:['Əla','Saytınız müasir təhlükəsizlik standartlarına cavab verir.'],B:['Yaxşı','Əsas qoruma var, bir neçə kiçik boşluq qalıb.'],C:['Orta','Bir neçə vacib qoruma ayarı çatışmır.'],D:['Zəif','Saytınız bir sıra geniş yayılmış hücumlara açıqdır.'],F:['Təhlükəli','Əsas təhlükəsizlik ayarlarının çoxu yoxdur.']};
-CHECKS.forEach(c=>{c[1]=T(c[1]);c[2]=T(c[2])});for(const k in GT)GT[k]=GT[k].map(x=>T(x));
+const GT=[[.85,'Əla','Əsas qoruma ayarlarının hamısı və ya demək olar hamısı aktivdir.'],[.6,'Yaxşı','Əsas qoruma var, bir neçə ayar əlavə etmək olar.'],[.35,'Orta','Bir neçə vacib qoruma ayarı aktiv deyil.'],[0,'Zəif','Qoruma ayarlarının çoxu aktiv deyil.']];
+CHECKS.forEach(c=>{c[1]=T(c[1]);c[2]=T(c[2])});GT.forEach(x=>{x[1]=T(x[1]);x[2]=T(x[2])});
 const ue=m=>Object.assign(new Error(m),{user:1});
 const sF=document.getElementById('sForm'),sH=document.getElementById('sHost'),sB=document.getElementById('sBtn'),sR=document.getElementById('sRes'),sE=document.getElementById('sErr');
 const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -822,15 +824,17 @@ sF.addEventListener('submit',async e=>{e.preventDefault();sE.textContent='';
     const r=await (await fetch(OBS+'scan?host='+encodeURIComponent(host),{method:'POST'})).json();
     if(r.error)throw ue(T(r.error==='invalid-hostname-lookup'?'Bu ünvan tapılmadı. Yazılışı yoxlayın.':'Sayt yoxlanıla bilmədi. Bir az sonra yenidən cəhd edin.'));
     let tests={};try{tests=(await (await fetch(OBS+'analyze?host='+encodeURIComponent(host))).json()).tests||{}}catch(_){}
-    const g=(r.grade||'F')[0],c=GC[g]||GC.F,[t1,t2]=GT[g]||GT.F,fails=[];
-    const rows=CHECKS.filter(([k])=>tests[k]).map(([k,n,d])=>{const p=tests[k].pass;if(p===false)fails.push(n);
+    const fails=[];let ok=0,all=0;
+    const rows=CHECKS.filter(([k])=>tests[k]).map(([k,n,d])=>{const p=tests[k].pass;if(p===false)fails.push(n);if(p===true)ok++;if(p!==null)all++;
       return `<li class="${p===true?'ok':p===false?'no':'na'}"><i>${p===true?'✓':p===false?'✕':'-'}</i><span><b>${n}</b><small>${d}</small></span></li>`}).join('');
-    const msg=[T('Salam, Sentri! Saytımı yoxladım: {h}',{h:host}),T('Qiymət: {g} ({s}/100)',{g:r.grade,s:r.score}),fails.length?T('Çatışmayanlar: {x}',{x:fails.join(', ')}):'',T('Tam təhlükəsizlik yoxlaması istəyirəm.')].filter(Boolean).join('\n');
-    sR.innerHTML=`<div class="sgrade"><div class="sring" style="--g:${c}"><b>${esc(r.grade)}</b></div><div><h3>${t1} · ${Math.max(0,Math.min(100,+r.score||0))}/100</h3><p>${t2}</p></div></div>
+    const ratio=all?ok/all:Math.max(0,Math.min(100,+r.score||0))/100,lv=GT.find(x=>ratio>=x[0]),c=ratio>=.85?GC.A:ratio>=.6?GC.B:ratio>=.35?GC.C:GC.D;
+    const msg=[T('Salam, Sentri! Saytımı yoxladım: {h}',{h:host}),all?T('Nəticə: {p}/{t} qoruma aktivdir',{p:ok,t:all}):'',fails.length?T('Çatışmayanlar: {x}',{x:fails.join(', ')}):'',T('Tam təhlükəsizlik yoxlaması istəyirəm.')].filter(Boolean).join('\n');
+    sR.innerHTML=`<div class="sgrade"><div class="sring" style="--g:${c}"><b class="cnt">${all?ok+'/'+all:esc(r.grade)}</b></div><div><h3>${lv[1]}${all?' · '+T('{p} / {t} qoruma aktivdir',{p:ok,t:all}):''}</h3><p>${lv[2]}</p></div></div>
       ${rows?`<ul class="chk">${rows}</ul>`:''}
+      <p class="snote">${T('Bu test yalnız brauzer qoruma ayarlarını yoxlayır: serverin, parolların və proqram kodunun təhlükəsizliyi buraya daxil deyil. Hətta Amazon və Google kimi böyük saytlarda da bəzi ayarlar söndürülmüş olur.')}</p>
       <a class="btn" target="_blank" rel="noopener" href="https://wa.me/994706950121?text=${encodeURIComponent(msg)}">${T(fails.length?'Boşluqları bağlamaq üçün bizə yazın':'Tam yoxlama üçün bizə yazın')}</a>
       <p class="ssrc">${T('Yoxlama {x} ilə aparılıb',{x:`<a href="${esc(r.details_url||'https://developer.mozilla.org/en-US/observatory')}" target="_blank" rel="noopener">Mozilla HTTP Observatory</a>`})}</p>`;
-    const ring=sR.querySelector('.sring');let v=0;const tgt=Math.max(4,Math.min(100,+r.score||0));
+    const ring=sR.querySelector('.sring');let v=0;const tgt=Math.max(4,Math.round(ratio*100));
     (function an(){v=Math.min(tgt,v+3);ring.style.setProperty('--v',v);if(v<tgt)requestAnimationFrame(an)})();
   }catch(err){sR.innerHTML='<div class="sidle">'+T('Nəticə alınmadı')+'</div>';sE.textContent=err.user?err.message:T('Bağlantı xətası. İnterneti yoxlayıb yenidən cəhd edin.')}
   finally{sB.disabled=false}});

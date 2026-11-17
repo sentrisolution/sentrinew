@@ -2,6 +2,14 @@
 // {x} placeholders are filled in by the page script.
 window.I18N={
 en:{
+"Saytınızın":"Check your site's","qoruma ayarlarını":"protection settings","yoxlayın":"",
+"Saytın ünvanını yazın. Ziyarətçiləri hücumlardan qoruyan brauzer ayarlarından hansılarının aktiv olduğunu bir neçə saniyəyə göstərəcəyik.":"Enter your website address. In a few seconds we'll show which of the browser settings that protect your visitors from attacks are turned on.",
+"Əsas qoruma ayarlarının hamısı və ya demək olar hamısı aktivdir.":"All or nearly all of the key protection settings are on.",
+"Əsas qoruma var, bir neçə ayar əlavə etmək olar.":"Basic protection is in place, a few settings could be added.",
+"Bir neçə vacib qoruma ayarı aktiv deyil.":"Several important protection settings are off.",
+"Qoruma ayarlarının çoxu aktiv deyil.":"Most protection settings are off.",
+"{p} / {t} qoruma aktivdir":"{p} of {t} protections on","Nəticə: {p}/{t} qoruma aktivdir":"Result: {p}/{t} protections on",
+"Bu test yalnız brauzer qoruma ayarlarını yoxlayır: serverin, parolların və proqram kodunun təhlükəsizliyi buraya daxil deyil. Hətta Amazon və Google kimi böyük saytlarda da bəzi ayarlar söndürülmüş olur.":"This test only checks browser protection settings. It does not cover server, password or code security. Even big sites like Amazon and Google leave some of these settings off.",
 "İT Dəstək, Sayt Hazırlanması və Kibertəhlükəsizlik Bakıda | Sentri Solutions":"IT Support, Web Development and Cybersecurity in Baku | Sentri Solutions",
 "META_DESC":"IT support and outsourcing in Baku: network and server setup, corporate websites and online stores, cybersecurity audits and 24/7 monitoring. Sentri Solutions, a single IT partner for your business.",
 "Ana səhifə":"Home","Xidmətlər":"Services","Layihələr":"Projects","Vebsaytlar":"Websites","Haqqımızda":"About us",
@@ -136,6 +144,14 @@ en:{
 "Nəticə alınmadı":"No result","Bağlantı xətası. İnterneti yoxlayıb yenidən cəhd edin.":"Connection error. Check your internet and try again."
 },
 ru:{
+"Saytınızın":"Проверьте","qoruma ayarlarını":"настройки защиты","yoxlayın":"вашего сайта",
+"Saytın ünvanını yazın. Ziyarətçiləri hücumlardan qoruyan brauzer ayarlarından hansılarının aktiv olduğunu bir neçə saniyəyə göstərəcəyik.":"Введите адрес сайта. За несколько секунд мы покажем, какие настройки браузерной защиты посетителей от атак включены.",
+"Əsas qoruma ayarlarının hamısı və ya demək olar hamısı aktivdir.":"Все или почти все ключевые настройки защиты включены.",
+"Əsas qoruma var, bir neçə ayar əlavə etmək olar.":"Базовая защита есть, можно добавить ещё несколько настроек.",
+"Bir neçə vacib qoruma ayarı aktiv deyil.":"Несколько важных настроек защиты выключены.",
+"Qoruma ayarlarının çoxu aktiv deyil.":"Большинство настроек защиты выключены.",
+"{p} / {t} qoruma aktivdir":"включено {p} из {t}","Nəticə: {p}/{t} qoruma aktivdir":"Результат: включено {p}/{t} защит",
+"Bu test yalnız brauzer qoruma ayarlarını yoxlayır: serverin, parolların və proqram kodunun təhlükəsizliyi buraya daxil deyil. Hətta Amazon və Google kimi böyük saytlarda da bəzi ayarlar söndürülmüş olur.":"Тест проверяет только настройки браузерной защиты. Безопасность сервера, паролей и программного кода сюда не входит. Даже у крупных сайтов вроде Amazon и Google часть этих настроек выключена.",
 "İT Dəstək, Sayt Hazırlanması və Kibertəhlükəsizlik Bakıda | Sentri Solutions":"IT-поддержка, разработка сайтов и кибербезопасность в Баку | Sentri Solutions",
 "META_DESC":"IT-поддержка и аутсорсинг в Баку: настройка сетей и серверов, корпоративные сайты и интернет-магазины, аудит кибербезопасности и мониторинг 24/7. Sentri Solutions, единый IT-партнёр для вашего бизнеса.",
 "Ana səhifə":"Главная","Xidmətlər":"Услуги","Layihələr":"Проекты","Vebsaytlar":"Сайты","Haqqımızda":"О нас",

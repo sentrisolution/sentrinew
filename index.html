@@ -321,6 +321,7 @@ body,.alt,.card,.info a,.stat,.checks li,footer{transition:background-color .3s,
 .sring{--g:var(--a1);--v:0;flex:none;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--g) calc(var(--v)*1%),var(--line) 0);transition:--v 1s}
 .sring b{width:90px;height:90px;border-radius:50%;background:var(--card);display:grid;place-items:center;font:800 46px "Inter Tight";color:var(--g)}
 .sring b.cnt{font-size:30px;letter-spacing:-.02em}
+.swarn{margin:-6px 0 16px;padding:12px 14px;border:1px solid rgba(251,191,36,.35);border-radius:12px;background:rgba(251,191,36,.08);color:var(--text);font-size:13.5px;line-height:1.5}
 .snote{margin:-6px 0 18px;color:var(--muted);font-size:13px;line-height:1.5}
 .sgrade h3{font-size:22px;margin-bottom:4px}.sgrade p{color:var(--muted);font-size:14.5px}
 .chk{list-style:none;display:grid;gap:8px;margin-bottom:22px}
@@ -824,12 +825,15 @@ sF.addEventListener('submit',async e=>{e.preventDefault();sE.textContent='';
     const r=await (await fetch(OBS+'scan?host='+encodeURIComponent(host),{method:'POST'})).json();
     if(r.error)throw ue(T(r.error==='invalid-hostname-lookup'?'Bu ünvan tapılmadı. Yazılışı yoxlayın.':'Sayt yoxlanıla bilmədi. Bir az sonra yenidən cəhd edin.'));
     let tests={};try{tests=(await (await fetch(OBS+'analyze?host='+encodeURIComponent(host))).json()).tests||{}}catch(_){}
+    const rd=tests.redirection;if(rd&&/^redirection-(to-https|off-host-from-http|not-to-https-on-initial-redirection|all-redirects-preloaded|not-needed-no-http)$/.test(rd.result))rd.pass=true;
+    const blocked=[401,403,429,503].includes(+r.status_code);
     const fails=[];let ok=0,all=0;
     const rows=CHECKS.filter(([k])=>tests[k]).map(([k,n,d])=>{const p=tests[k].pass;if(p===false)fails.push(n);if(p===true)ok++;if(p!==null)all++;
       return `<li class="${p===true?'ok':p===false?'no':'na'}"><i>${p===true?'✓':p===false?'✕':'-'}</i><span><b>${n}</b><small>${d}</small></span></li>`}).join('');
     const ratio=all?ok/all:Math.max(0,Math.min(100,+r.score||0))/100,lv=GT.find(x=>ratio>=x[0]),c=ratio>=.85?GC.A:ratio>=.6?GC.B:ratio>=.35?GC.C:GC.D;
     const msg=[T('Salam, Sentri! Saytımı yoxladım: {h}',{h:host}),all?T('Nəticə: {p}/{t} qoruma aktivdir',{p:ok,t:all}):'',fails.length?T('Çatışmayanlar: {x}',{x:fails.join(', ')}):'',T('Tam təhlükəsizlik yoxlaması istəyirəm.')].filter(Boolean).join('\n');
     sR.innerHTML=`<div class="sgrade"><div class="sring" style="--g:${c}"><b class="cnt">${all?ok+'/'+all:esc(r.grade)}</b></div><div><h3>${lv[1]}${all?' · '+T('{p} / {t} qoruma aktivdir',{p:ok,t:all}):''}</h3><p>${lv[2]}</p></div></div>
+      ${blocked?`<p class="swarn">${T('Saytın qoruma sistemi (məsələn Cloudflare) avtomatik yoxlamanı blokladı. Ona görə nəticə tam olmaya bilər: bəzi ayarlar əslində aktiv ola bilər.')}</p>`:''}
       ${rows?`<ul class="chk">${rows}</ul>`:''}
       <p class="snote">${T('Bu test yalnız brauzer qoruma ayarlarını yoxlayır: serverin, parolların və proqram kodunun təhlükəsizliyi buraya daxil deyil. Hətta Amazon və Google kimi böyük saytlarda da bəzi ayarlar söndürülmüş olur.')}</p>
       <a class="btn" target="_blank" rel="noopener" href="https://wa.me/994706950121?text=${encodeURIComponent(msg)}">${T(fails.length?'Boşluqları bağlamaq üçün bizə yazın':'Tam yoxlama üçün bizə yazın')}</a>

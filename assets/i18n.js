@@ -2,6 +2,7 @@
 // {x} placeholders are filled in by the page script.
 window.I18N={
 en:{
+"Saytın qoruma sistemi (məsələn Cloudflare) avtomatik yoxlamanı blokladı. Ona görə nəticə tam olmaya bilər: bəzi ayarlar əslində aktiv ola bilər.":"The site's protection system (for example Cloudflare) blocked the automated check, so this result may be incomplete: some settings may actually be on.",
 "Saytınızın":"Check your site's","qoruma ayarlarını":"protection settings","yoxlayın":"",
 "Saytın ünvanını yazın. Ziyarətçiləri hücumlardan qoruyan brauzer ayarlarından hansılarının aktiv olduğunu bir neçə saniyəyə göstərəcəyik.":"Enter your website address. In a few seconds we'll show which of the browser settings that protect your visitors from attacks are turned on.",
 "Əsas qoruma ayarlarının hamısı və ya demək olar hamısı aktivdir.":"All or nearly all of the key protection settings are on.",
@@ -144,6 +145,7 @@ en:{
 "Nəticə alınmadı":"No result","Bağlantı xətası. İnterneti yoxlayıb yenidən cəhd edin.":"Connection error. Check your internet and try again."
 },
 ru:{
+"Saytın qoruma sistemi (məsələn Cloudflare) avtomatik yoxlamanı blokladı. Ona görə nəticə tam olmaya bilər: bəzi ayarlar əslində aktiv ola bilər.":"Система защиты сайта (например, Cloudflare) заблокировала автоматическую проверку, поэтому результат может быть неполным: некоторые настройки на самом деле могут быть включены.",
 "Saytınızın":"Проверьте","qoruma ayarlarını":"настройки защиты","yoxlayın":"вашего сайта",
 "Saytın ünvanını yazın. Ziyarətçiləri hücumlardan qoruyan brauzer ayarlarından hansılarının aktiv olduğunu bir neçə saniyəyə göstərəcəyik.":"Введите адрес сайта. За несколько секунд мы покажем, какие настройки браузерной защиты посетителей от атак включены.",
 "Əsas qoruma ayarlarının hamısı və ya demək olar hamısı aktivdir.":"Все или почти все ключевые настройки защиты включены.",

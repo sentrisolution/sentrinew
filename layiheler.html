@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layihələrimiz: hazırladığımız saytlar | Sentri</title>
+<meta name="description" content="Sentri Solutions komandasının hazırladığı veb saytlar: onlayn mağazalar, korporativ saytlar, avto xidmətlər, qida brendləri və təhsil portalları.">
+<meta name="theme-color" content="#030a1f">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="canonical" href="https://new.sentri.az/layiheler.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sentri">
+<meta property="og:url" content="https://new.sentri.az/layiheler.html">
+<meta property="og:title" content="Layihələrimiz: hazırladığımız saytlar | Sentri">
+<meta property="og:description" content="Sentri Solutions komandasının hazırladığı veb saytlar.">
+<meta property="og:image" content="https://new.sentri.az/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>try{if(localStorage.getItem('sentri-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+<style>
+:root{
+  --bg:#030a1f; --bg2:#06112d; --card:#081634; --line:rgba(148,170,210,.12); --line2:rgba(148,170,210,.22);
+  --text:#e8eefc; --muted:#8b97b3; --dim:#5b6682;
+  --a1:#4d9bff; --a2:#1e6cf0; --hl:#ffb547;
+  --pop:rgba(6,17,45,.85); --shadow:0 30px 70px -30px rgba(0,0,0,.7);
+}
+html[data-theme="light"]{
+  --bg:#f4f7fc; --bg2:#ffffff; --card:#ffffff; --line:rgba(15,40,90,.10); --line2:rgba(15,40,90,.18);
+  --text:#0b1530; --muted:#4a5672; --dim:#7b87a3; --a1:#1e6cf0; --a2:#0f47c9; --hl:#b45309;
+  --pop:rgba(255,255,255,.85); --shadow:0 30px 60px -30px rgba(15,40,90,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .3s,color .3s}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;letter-spacing:-.025em;line-height:1.08}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.mono{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--pop);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font:700 18px "Inter Tight",sans-serif;white-space:nowrap}
+.logo em{font-style:normal;color:var(--a1);margin-left:4px}
+[data-theme="light"] .logo img{filter:brightness(0)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;color:var(--muted);font-size:14px;font-weight:500;transition:.2s}
+.back:hover{color:var(--text);background:rgba(127,150,200,.1)}
+.lang{display:flex;border:1px solid var(--line2);border-radius:999px;padding:3px}
+.lang a{padding:4px 9px;border-radius:999px;font:500 12px "JetBrains Mono",monospace;color:var(--muted)}
+.lang a.on{color:var(--text);background:rgba(127,150,200,.14)}
+.thm{width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.thm svg{width:17px;height:17px}.thm .su{display:none}
+[data-theme="light"] .thm .su{display:block}[data-theme="light"] .thm .mo{display:none}
+
+/* hero */
+.hero{position:relative;padding:80px 0 40px;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -10% auto;height:520px;background:radial-gradient(closest-side,rgba(77,155,255,.22),transparent);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--a1)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--a1);box-shadow:0 0 0 4px rgba(77,155,255,.18)}
+.hero h1{position:relative;font-size:clamp(40px,7vw,76px);margin:18px 0 16px}
+.hero h1 span{color:var(--hl)}
+.hero p{position:relative;max-width:620px;margin:0 auto;color:var(--muted);font-size:18px}
+.stats{position:relative;display:flex;justify-content:center;gap:clamp(20px,6vw,64px);margin-top:36px}
+.stats b{display:block;font:800 clamp(28px,4vw,40px) "Inter Tight",sans-serif}
+.stats span{color:var(--dim);font-size:13px}
+
+/* filters */
+.filters{position:sticky;top:66px;z-index:40;padding:14px 0;background:linear-gradient(var(--bg) 70%,transparent)}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.chip{border:1px solid var(--line2);background:var(--card);color:var(--muted);padding:8px 16px;border-radius:999px;font:500 14px Inter,sans-serif;cursor:pointer;transition:.2s}
+.chip:hover{color:var(--text)}
+.chip.on{background:var(--a2);border-color:var(--a2);color:#fff}
+.chip i{font-style:normal;opacity:.6;margin-left:6px;font-size:12px}
+
+/* feed */
+.feed{position:relative;max-width:860px;margin:24px auto 0;padding-left:56px}
+.feed::before{content:"";position:absolute;left:19px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--a1),rgba(77,155,255,.05))}
+.post{position:relative;margin-bottom:44px;opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.post.in{opacity:1;transform:none}
+.post.hide{display:none}
+.post::before{content:attr(data-n);position:absolute;left:-56px;top:16px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:2px solid var(--a1);color:var(--a1);font:600 12px "JetBrains Mono",monospace}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);transition:transform .35s,border-color .35s}
+.card:hover{transform:translateY(-4px);border-color:var(--line2)}
+.ph{display:flex;align-items:center;gap:12px;padding:16px 18px}
+.av{width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;font:800 18px "Inter Tight",sans-serif;color:#fff;background:var(--c)}
+.who{flex:1;min-width:0}
+.who h2{font-size:17px;letter-spacing:-.01em}
+.who span{display:block;color:var(--dim);font:400 13px "JetBrains Mono",monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tag{flex:none;padding:5px 11px;border-radius:999px;font-size:12px;font-weight:600;color:var(--a1);background:rgba(77,155,255,.12)}
+
+.shot{display:block;position:relative;margin:0 18px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0b1530}
+.bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#0d1a3a;border-bottom:1px solid rgba(255,255,255,.06)}
+[data-theme="light"] .bar{background:#e9eef7;border-color:rgba(15,40,90,.08)}
+.bar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar u{flex:1;margin-left:10px;text-decoration:none;padding:3px 12px;border-radius:7px;background:rgba(255,255,255,.07);color:#8b97b3;font:400 12px "JetBrains Mono",monospace;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+[data-theme="light"] .bar u{background:#fff;color:#4a5672}
+.view{position:relative;aspect-ratio:16/10;overflow:hidden}
+.view img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.shot:hover .view img{transform:scale(1.05)}
+.cover{position:absolute;inset:0;display:grid;place-items:center;text-align:center;background:var(--g);color:#fff;overflow:hidden}
+.cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(closest-side,#000,transparent)}
+.cover::after{content:"";position:absolute;width:60%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12);filter:blur(60px);top:-20%;right:-10%}
+.cover b{position:relative;display:block;font:800 clamp(30px,6vw,58px)/1 "Inter Tight",sans-serif;letter-spacing:-.03em;transition:transform .8s}
+.cover small{position:relative;display:block;margin-top:12px;opacity:.8;font:500 13px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase}
+.shot:hover .cover b{transform:scale(1.06)}
+.go-ov{position:absolute;inset:auto 14px 14px auto;display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;background:rgba(3,10,31,.82);color:#fff;font-size:13px;font-weight:600;opacity:0;transform:translateY(8px);transition:.3s;backdrop-filter:blur(6px)}
+.shot:hover .go-ov{opacity:1;transform:none}
+
+.pb{padding:16px 18px 18px}
+.pb p{color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.meta span{padding:4px 10px;border-radius:8px;border:1px solid var(--line);color:var(--dim);font-size:12.5px}
+.pf{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.pf .mono{color:var(--dim);font-size:11px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:var(--a2);color:#fff;font-size:14px;font-weight:600;transition:.2s}
+.btn:hover{background:var(--a1);transform:translateX(2px)}
+.btn svg{width:15px;height:15px}
+
+.cta{max-width:860px;margin:20px auto 90px;padding:40px 28px;text-align:center;border-radius:24px;border:1px solid var(--line2);background:radial-gradient(120% 120% at 50% 0,rgba(77,155,255,.18),transparent 60%),var(--card)}
+.cta h2{font-size:clamp(26px,4vw,38px);margin-bottom:10px}
+.cta p{color:var(--muted);margin-bottom:22px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font-size:13px;text-align:center}
+
+@media (max-width:640px){
+  .hero{padding:56px 0 28px}
+  .feed{padding-left:0}.feed::before,.post::before{display:none}
+  .ph,.pb{padding-left:14px;padding-right:14px}.shot{margin:0 14px}
+  .back span{display:none}
+  .chips{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px}
+  .chip{flex:none}
+  .go-ov{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){.post{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="./" class="logo" aria-label="Sentri Solutions"><img src="assets/logo.png" alt="" width="30" height="30"><span>Sentri<em>Solutions</em></span></a>
+    <div class="nav-r">
+      <a href="./" class="back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg><span>Ana səhifə</span></a>
+      <div class="lang"><a href="#" class="on">AZ</a><a href="#">EN</a><a href="#">RU</a></div>
+      <button class="thm" id="thm" type="button" aria-label="Gecə / gündüz rejimi">
+        <svg class="mo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/></svg>
+        <svg class="su" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="mono eyebrow">Portfolio · Sentri Solutions</span>
+    <h1>Hazırladığımız <span>saytlar</span></h1>
+    <p>Onlayn mağazalardan korporativ saytlara qədər: hər biri real biznes üçün, sıfırdan dizayn edilib və işə salınıb.</p>
+    <div class="stats">
+      <div><b id="cnt">12</b><span>layihə</span></div>
+      <div><b>5</b><span>sahə</span></div>
+      <div><b>100%</b><span>mobil uyğun</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="filters"><div class="wrap chips" id="chips"></div></div>
+
+<div class="wrap"><div class="feed" id="feed"></div></div>
+
+<div class="wrap">
+  <div class="cta">
+    <h2>Növbəti layihə sizinki olsun</h2>
+    <p>Saytınızın ideyasını qısaca yazın, 1 iş günü ərzində qiymət təklif edək.</p>
+    <a class="btn" href="https://wa.me/994706950121" target="_blank" rel="noopener">WhatsApp-da yazın <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Sentri Solutions. Bütün hüquqlar qorunur.</div></footer>
+
+<script src="assets/i18n.js"></script>
+<script>
+// Projects: add a new site by adding one line here. img: file in assets/projects (optional).
+const P=[
+ {name:'Palid Parfumery', url:'https://palidparfumery.az/', host:'palidparfumery.az', cat:'shop', c:'#9d4edd,#3c096c', desc:'Ətir və kosmetika onlayn mağazası: kataloq, filtrlər, səbət və onlayn sifariş.', tags:['Onlayn mağaza','Kataloq','Səbət']},
+ {name:'Bionut', url:'https://bionut.az/', host:'bionut.az', cat:'shop', c:'#52b788,#1b4332', desc:'Təbii qida məhsulları üçün onlayn mağaza: məhsul kataloqu və rahat sifariş.', tags:['Onlayn mağaza','Qida','Mobil']},
+ {name:'GoldHands', url:'https://goldhands.az/', host:'goldhands.az', cat:'shop', img:'goldhands.jpg', c:'#d4a373,#7f4f24', desc:'Azərbaycan ustalarının əl işləri üçün marketpleys: satıcı kabineti, kateqoriyalar və xüsusi sifariş.', tags:['Marketpleys','Satıcı kabineti','Axtarış']},
+ {name:'İnciLab', url:'https://sentri.incilab.az/', host:'incilab.az', cat:'corp', c:'#4cc9f0,#3a0ca3', desc:'Şirkətin korporativ saytı: xidmətlər, haqqında və əlaqə bölmələri.', tags:['Korporativ','Xidmətlər']},
+ {name:'132-134 nömrəli təhsil kompleksi', url:'https://132-134.edu.az/', host:'132-134.edu.az', cat:'edu', img:'132-134.jpg', c:'#4361ee,#14213d', desc:'Təhsil kompleksinin rəsmi saytı: xəbərlər, qəbul, akademik bölmə və məzunlar. AZ və EN dillərində.', tags:['Təhsil','Xəbərlər','AZ / EN']},
+ {name:'Proserv', url:'https://proserv.pro/', host:'proserv.pro', cat:'corp', img:'proserv.jpg', c:'#adb5bd,#212529', desc:'Bakıda VIP nəqliyyat və şofer xidməti: hava limanı transferləri, korporativ və protokol daşımaları.', tags:['Korporativ','Nəqliyyat','Çoxdilli']},
+ {name:'VINCODE', url:'https://vincode.az/', host:'vincode.az', cat:'auto', img:'vincode.jpg', c:'#ffd60a,#1d1d1d', desc:'VIN kod üzrə avtomobil tarixçəsinin yoxlanması: onlayn sifariş, ödəniş və sifarişin izlənməsi.', tags:['Avto','Onlayn ödəniş','İzləmə']},
+ {name:'IAAI.az', url:'https://iaai.az/', host:'iaai.az', cat:'auto', img:'iaai.jpg', c:'#e63946,#7a0010', desc:'ABŞ-dan Azərbaycana avtomobil gətirmə: Copart və IAAI hərracları, daşınma və qiymət kalkulyatoru.', tags:['Avto','Kalkulyator','İdxal']},
+ {name:'Ujar Foods', url:'https://ujarfoods.az/', host:'ujarfoods.az', cat:'food', img:'ujarfoods.jpg', c:'#c1121f,#3d0a0a', desc:'Nar şirəsi və donmuş nar dənələri istehsalçısının brend saytı. AZ və EN dillərində.', tags:['Qida brendi','Məhsullar','AZ / EN']},
+ {name:'AZLTK 2026', url:'https://azltk2026.az/', host:'azltk2026.az', cat:'corp', c:'#00b4d8,#023e8a', desc:'Tədbirin rəsmi saytı: proqram, iştirakçılar üçün məlumat və qeydiyyat.', tags:['Tədbir','Qeydiyyat']},
+ {name:'ArchiArt Studio', url:'https://archiart.az/', host:'archiart.az', cat:'corp', img:'archiart.jpg', c:'#8d99ae,#2b2d42', desc:'Memarlıq və dizayn studiyasının saytı: tamamlanmış layihələr, xidmətlər və portfolio.', tags:['Memarlıq','Portfolio']},
+ {name:'Hanoğlu Baklava', url:'https://hanoglubaklava.az/', host:'hanoglubaklava.az', cat:'food', c:'#e9c46a,#9c6644', desc:'Paxlava və şərq şirniyyatları brendinin saytı: məhsullar və sifariş.', tags:['Qida brendi','Şirniyyat']}
+];
+const CATS={all:'Hamısı',shop:'Onlayn mağaza',corp:'Korporativ',auto:'Avto',food:'Qida',edu:'Təhsil'};
+const CATTAG={shop:'Onlayn mağaza',corp:'Korporativ',auto:'Avto xidmət',food:'Qida brendi',edu:'Təhsil'};
+
+// i18n (same rules as the main page)
+const X={
+ en:{"Hazırladığımız":"Websites","saytlar":"we built","Ana səhifə":"Home","layihə":"projects","sahə":"industries","mobil uyğun":"mobile ready",
+  "Onlayn mağazalardan korporativ saytlara qədər: hər biri real biznes üçün, sıfırdan dizayn edilib və işə salınıb.":"From online stores to corporate sites: each one designed from scratch and launched for a real business.",
+  "Hamısı":"All","Onlayn mağaza":"Online store","Korporativ":"Corporate","Avto":"Auto","Qida":"Food","Təhsil":"Education","Avto xidmət":"Auto service","Qida brendi":"Food brand",
+  "Sayta keç":"Visit site","Bax":"Open","Növbəti layihə sizinki olsun":"Let the next project be yours","Saytınızın ideyasını qısaca yazın, 1 iş günü ərzində qiymət təklif edək.":"Tell us your idea in a few words and we'll send a quote within 1 business day.",
+  "WhatsApp-da yazın":"Message us on WhatsApp","Bütün hüquqlar qorunur.":"All rights reserved.","Gecə / gündüz rejimi":"Night / day mode",
+  "Kataloq":"Catalog","Səbət":"Cart","Mobil":"Mobile","Marketpleys":"Marketplace","Satıcı kabineti":"Seller dashboard","Axtarış":"Search","Xidmətlər":"Services","Xəbərlər":"News","Nəqliyyat":"Transport","Çoxdilli":"Multilingual","Onlayn ödəniş":"Online payment","İzləmə":"Tracking","Kalkulyator":"Calculator","İdxal":"Import","Məhsullar":"Products","Tədbir":"Event","Qeydiyyat":"Registration","Memarlıq":"Architecture","Şirniyyat":"Sweets",
+  "132-134 nömrəli təhsil kompleksi":"Education Complex No. 132-134",
+  "Ətir və kosmetika onlayn mağazası: kataloq, filtrlər, səbət və onlayn sifariş.":"Perfume and cosmetics online store: catalog, filters, cart and online ordering.",
+  "Təbii qida məhsulları üçün onlayn mağaza: məhsul kataloqu və rahat sifariş.":"Online store for natural food products: product catalog and easy ordering.",
+  "Azərbaycan ustalarının əl işləri üçün marketpleys: satıcı kabineti, kateqoriyalar və xüsusi sifariş.":"A marketplace for handmade goods by Azerbaijani artisans: seller dashboard, categories and custom orders.",
+  "Şirkətin korporativ saytı: xidmətlər, haqqında və əlaqə bölmələri.":"Company website: services, about and contact sections.",
+  "Təhsil kompleksinin rəsmi saytı: xəbərlər, qəbul, akademik bölmə və məzunlar. AZ və EN dillərində.":"Official site of the education complex: news, admissions, academics and alumni. In Azerbaijani and English.",
+  "Bakıda VIP nəqliyyat və şofer xidməti: hava limanı transferləri, korporativ və protokol daşımaları.":"VIP transport and chauffeur service in Baku: airport transfers, corporate and protocol transport.",
+  "VIN kod üzrə avtomobil tarixçəsinin yoxlanması: onlayn sifariş, ödəniş və sifarişin izlənməsi.":"Vehicle history check by VIN: online ordering, payment and order tracking.",
+  "ABŞ-dan Azərbaycana avtomobil gətirmə: Copart və IAAI hərracları, daşınma və qiymət kalkulyatoru.":"Car import from the USA to Azerbaijan: Copart and IAAI auctions, shipping and a price calculator.",
+  "Nar şirəsi və donmuş nar dənələri istehsalçısının brend saytı. AZ və EN dillərində.":"Brand site of a pomegranate juice and frozen arils producer. In Azerbaijani and English.",
+  "Tədbirin rəsmi saytı: proqram, iştirakçılar üçün məlumat və qeydiyyat.":"Official event site: programme, participant info and registration.",
+  "Memarlıq və dizayn studiyasının saytı: tamamlanmış layihələr, xidmətlər və portfolio.":"Architecture and design studio site: completed projects, services and portfolio.",
+  "Paxlava və şərq şirniyyatları brendinin saytı: məhsullar və sifariş.":"Site of a baklava and oriental sweets brand: products and ordering.",
+  TITLE:"Our projects: websites we built | Sentri"},
+ ru:{"Hazırladığımız":"Сайты,","saytlar":"которые мы сделали","Ana səhifə":"Главная","layihə":"проектов","sahə":"отраслей","mobil uyğun":"адаптивность",
+  "Onlayn mağazalardan korporativ saytlara qədər: hər biri real biznes üçün, sıfırdan dizayn edilib və işə salınıb.":"От интернет-магазинов до корпоративных сайтов: каждый создан с нуля и запущен для реального бизнеса.",
+  "Hamısı":"Все","Onlayn mağaza":"Интернет-магазин","Korporativ":"Корпоративный","Avto":"Авто","Qida":"Еда","Təhsil":"Образование","Avto xidmət":"Авто услуги","Qida brendi":"Пищевой бренд",
+  "Sayta keç":"Перейти на сайт","Bax":"Открыть","Növbəti layihə sizinki olsun":"Следующий проект может быть вашим","Saytınızın ideyasını qısaca yazın, 1 iş günü ərzində qiymət təklif edək.":"Кратко опишите идею сайта, и мы пришлём цену в течение 1 рабочего дня.",
+  "WhatsApp-da yazın":"Написать в WhatsApp","Bütün hüquqlar qorunur.":"Все права защищены.","Gecə / gündüz rejimi":"Ночной / дневной режим",
+  "Kataloq":"Каталог","Səbət":"Корзина","Mobil":"Мобильный","Marketpleys":"Маркетплейс","Satıcı kabineti":"Кабинет продавца","Axtarış":"Поиск","Xidmətlər":"Услуги","Xəbərlər":"Новости","Nəqliyyat":"Транспорт","Çoxdilli":"Многоязычный","Onlayn ödəniş":"Онлайн-оплата","İzləmə":"Отслеживание","Kalkulyator":"Калькулятор","İdxal":"Импорт","Məhsullar":"Продукция","Tədbir":"Мероприятие","Qeydiyyat":"Регистрация","Memarlıq":"Архитектура","Şirniyyat":"Сладости",
+  "132-134 nömrəli təhsil kompleksi":"Образовательный комплекс № 132-134",
+  "Ətir və kosmetika onlayn mağazası: kataloq, filtrlər, səbət və onlayn sifariş.":"Интернет-магазин парфюмерии и косметики: каталог, фильтры, корзина и онлайн-заказ.",
+  "Təbii qida məhsulları üçün onlayn mağaza: məhsul kataloqu və rahat sifariş.":"Интернет-магазин натуральных продуктов: каталог и удобный заказ.",
+  "Azərbaycan ustalarının əl işləri üçün marketpleys: satıcı kabineti, kateqoriyalar və xüsusi sifariş.":"Маркетплейс изделий ручной работы азербайджанских мастеров: кабинет продавца, категории и заказ на заказ.",
+  "Şirkətin korporativ saytı: xidmətlər, haqqında və əlaqə bölmələri.":"Корпоративный сайт компании: услуги, о компании и контакты.",
+  "Təhsil kompleksinin rəsmi saytı: xəbərlər, qəbul, akademik bölmə və məzunlar. AZ və EN dillərində.":"Официальный сайт образовательного комплекса: новости, приём, учёба и выпускники. На азербайджанском и английском.",
+  "Bakıda VIP nəqliyyat və şofer xidməti: hava limanı transferləri, korporativ və protokol daşımaları.":"VIP-транспорт и услуги водителя в Баку: трансферы из аэропорта, корпоративные и протокольные перевозки.",
+  "VIN kod üzrə avtomobil tarixçəsinin yoxlanması: onlayn sifariş, ödəniş və sifarişin izlənməsi.":"Проверка истории автомобиля по VIN: онлайн-заказ, оплата и отслеживание.",
+  "ABŞ-dan Azərbaycana avtomobil gətirmə: Copart və IAAI hərracları, daşınma və qiymət kalkulyatoru.":"Доставка авто из США в Азербайджан: аукционы Copart и IAAI, перевозка и калькулятор цены.",
+  "Nar şirəsi və donmuş nar dənələri istehsalçısının brend saytı. AZ və EN dillərində.":"Сайт бренда гранатового сока и замороженных зёрен граната. На азербайджанском и английском.",
+  "Tədbirin rəsmi saytı: proqram, iştirakçılar üçün məlumat və qeydiyyat.":"Официальный сайт мероприятия: программа, информация для участников и регистрация.",
+  "Memarlıq və dizayn studiyasının saytı: tamamlanmış layihələr, xidmətlər və portfolio.":"Сайт архитектурной и дизайн-студии: реализованные проекты, услуги и портфолио.",
+  "Paxlava və şərq şirniyyatları brendinin saytı: məhsullar və sifariş.":"Сайт бренда пахлавы и восточных сладостей: продукция и заказ.",
+  TITLE:"Наши проекты: сайты, которые мы сделали | Sentri"}
+};
+const LANGS=['az','en','ru'];
+let LANG=(new URLSearchParams(location.search).get('lang')||'').toLowerCase();
+if(!LANGS.includes(LANG)){try{LANG=localStorage.getItem('sentri-lang')||''}catch(e){}if(!LANGS.includes(LANG))LANG='az'}
+try{localStorage.setItem('sentri-lang',LANG)}catch(e){}
+const DICT=Object.assign({},(window.I18N||{})[LANG]||{},X[LANG]||{});
+const T=s=>s in DICT?DICT[s]:s;
+document.documentElement.lang=LANG;
+const q=LANG==='az'?'':'?lang='+LANG;
+document.querySelectorAll('a[href="./"]').forEach(a=>a.href='./'+q);
+document.querySelectorAll('.lang a').forEach(a=>{const l=a.textContent.trim().toLowerCase();a.href='?lang='+l;a.classList.toggle('on',l===LANG)});
+
+// build feed
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg>';
+const feed=document.getElementById('feed');
+feed.innerHTML=P.map((p,i)=>{
+  const [c1,c2]=p.c.split(','),n=String(i+1).padStart(2,'0');
+  const media=p.img?`<img src="assets/projects/${p.img}" alt="${esc(T(p.name))}" loading="lazy" width="1000" height="625">`
+    :`<div class="cover" style="--g:linear-gradient(135deg,${c1},${c2})"><div><b>${esc(T(p.name))}</b><small>${esc(p.host)}</small></div></div>`;
+  return `<article class="post" data-cat="${p.cat}" data-n="${n}"><div class="card">
+    <div class="ph"><div class="av" style="--c:linear-gradient(135deg,${c1},${c2})">${esc(p.name.replace(/[^A-Za-zƏÖÜÇŞĞİəöüçşğı0-9]/g,'')[0])}</div>
+      <div class="who"><h2>${esc(T(p.name))}</h2><span>${esc(p.host)}</span></div><span class="tag">${esc(T(CATTAG[p.cat]))}</span></div>
+    <a class="shot" href="${p.url}" target="_blank" rel="noopener"><div class="bar"><i></i><i></i><i></i><u>https://${esc(p.host)}</u></div>
+      <div class="view">${media}<span class="go-ov">${esc(T('Bax'))} ${arrow.replace('<svg','<svg width="14" height="14"')}</span></div></a>
+    <div class="pb"><p>${esc(T(p.desc))}</p><div class="meta">${p.tags.map(t=>`<span>${esc(T(t))}</span>`).join('')}</div>
+      <div class="pf"><span class="mono">${esc(p.host)}</span><a class="btn" href="${p.url}" target="_blank" rel="noopener">${esc(T('Sayta keç'))} ${arrow}</a></div></div>
+  </div></article>`}).join('');
+
+// filters
+const chips=document.getElementById('chips');
+chips.innerHTML=Object.keys(CATS).map(k=>{const c=k==='all'?P.length:P.filter(p=>p.cat===k).length;
+  return `<button class="chip${k==='all'?' on':''}" data-k="${k}">${esc(T(CATS[k]))}<i>${c}</i></button>`}).join('');
+chips.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;
+  chips.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b));
+  let n=0;feed.querySelectorAll('.post').forEach(p=>{const show=b.dataset.k==='all'||p.dataset.cat===b.dataset.k;p.classList.toggle('hide',!show);
+    if(show){p.dataset.n=String(++n).padStart(2,'0');p.classList.remove('in');requestAnimationFrame(()=>requestAnimationFrame(()=>p.classList.add('in')))}});
+  window.scrollTo({top:document.querySelector('.filters').offsetTop-66,behavior:'smooth'})};
+
+// translate static text
+if(LANG!=='az'){
+  const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('script,style,#feed,#chips')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  const ns=[];while(tw.nextNode())ns.push(tw.currentNode);
+  ns.forEach(n=>{const t=n.nodeValue.trim();if(t&&t in DICT)n.nodeValue=n.nodeValue.replace(t,DICT[t])});
+  document.querySelectorAll('[aria-label]').forEach(el=>{const v=el.getAttribute('aria-label');if(v in DICT)el.setAttribute('aria-label',DICT[v])});
+  if(DICT.TITLE)document.title=DICT.TITLE;
+}
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+feed.querySelectorAll('.post').forEach(p=>io.observe(p));
+
+// theme
+const root=document.documentElement,meta=document.querySelector('meta[name=theme-color]');
+function setTheme(l,save){if(l)root.setAttribute('data-theme','light');else root.removeAttribute('data-theme');meta.content=l?'#f4f7fc':'#030a1f';
+  if(save)try{localStorage.setItem('sentri-theme',l?'light':'dark')}catch(e){}}
+setTheme(root.getAttribute('data-theme')==='light');
+document.getElementById('thm').onclick=()=>setTheme(root.getAttribute('data-theme')!=='light',true);
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

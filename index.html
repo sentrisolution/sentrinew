@@ -77,10 +77,11 @@ header.scrolled{background:rgba(3,10,31,.72);backdrop-filter:blur(16px) saturate
 .logo{display:flex;align-items:center;gap:10px;font:700 19px "Inter Tight";letter-spacing:-.02em}
 .logo img{width:34px;height:34px}
 @media (max-width:400px){.logo{font-size:16px;gap:8px}}
-.logo span{white-space:nowrap}.logo em{font-style:normal;font-weight:500;color:var(--muted);margin-left:.28em}
+.logo span{white-space:nowrap}.logo em{font-style:normal;font-weight:500;font-size:.9em;color:var(--muted);margin-left:.28em}
 .logo small{display:block;font:500 10px "JetBrains Mono";letter-spacing:.18em;color:var(--muted);margin-top:1px;text-transform:uppercase}
-.menu{display:flex;align-items:center;gap:4px;list-style:none}
-.menu>li>a,.menu .dd-t{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;color:var(--muted);font-size:14.5px;font-weight:500;transition:.2s;cursor:pointer}
+.menu{display:flex;align-items:center;gap:2px;list-style:none}
+.logo,.nav-r{flex:none}.menu a,.menu .dd-t,.nav-r .btn{white-space:nowrap}
+.menu>li>a,.menu .dd-t{display:inline-flex;align-items:center;gap:6px;padding:8px 9px;border-radius:999px;color:var(--muted);font-size:14px;font-weight:500;transition:.2s;cursor:pointer}
 .menu>li>a:hover,.menu .dd:hover .dd-t,.menu .dd:focus-within .dd-t{color:var(--text);background:rgba(255,255,255,.05)}
 .dd{position:relative}
 .dd-t::after{content:"";width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.7}
@@ -89,7 +90,7 @@ header.scrolled{background:rgba(3,10,31,.72);backdrop-filter:blur(16px) saturate
 .dd-m a{display:block;padding:10px 12px;border-radius:9px;font-size:14px;font-weight:500;color:var(--muted)}
 .dd-m a:hover{color:var(--text);background:rgba(77,155,255,.08)}
 .menu .m-only{display:none}
-.nav-r{display:flex;align-items:center;gap:14px}
+.nav-r{display:flex;align-items:center;gap:10px}
 .lang{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px}
 .lang a{padding:4px 9px;border-radius:999px;font:500 11.5px "JetBrains Mono";color:var(--dim)}
 .lang a.on{background:rgba(255,255,255,.08);color:var(--text)}
@@ -203,7 +204,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 34px;color:var(--muted);f
   .why-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .foot{grid-template-columns:1fr 1fr}
 }
-@media (max-width:1080px){
+@media (max-width:1180px){
   .menu,.nav-r .btn{display:none}
   .burger{display:grid;place-items:center}
   .menu.open{display:flex;position:absolute;top:76px;left:16px;right:16px;flex-direction:column;align-items:stretch;padding:12px;background:rgba(6,17,45,.97);border:1px solid var(--line2);border-radius:18px}
@@ -401,7 +402,7 @@ body,.alt,.card,.info a,.stat,.checks li,footer{transition:background-color .3s,
         <input class="sin" type="search" enterkeyhint="search" autocomplete="off" placeholder="Xidmət, layihə və ya bloq axtar…" aria-label="Axtar">
         <button class="sx" type="button" aria-label="Bağla"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div></div>
-      <a href="#contact" class="btn btn-p" style="padding:11px 18px">Bizə yazın</a>
+      <a href="#contact" class="btn btn-p" style="padding:10px 16px;font-size:14px">Bizə yazın</a>
       <button class="burger" id="burger" aria-label="Menyu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
